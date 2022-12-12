@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/searchme86/NodeJsAuth-works#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
     "nodemon": "^2.0.20"
   }
 }
