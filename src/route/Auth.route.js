@@ -8,6 +8,6 @@ import {
 const AuthRouter = express.Router();
 
 AuthRouter.route('/check').post(checkUserExist);
-AuthRouter.route('/something').post(createUserInfo);
+AuthRouter.route('/create').post(createUserInfo);
 
 export default AuthRouter;

@@ -16,13 +16,11 @@ export const checkUserExist = async (req, res) => {
       userNickName: LoginUserNickname,
     }).exec();
 
-    //Unauthorized
     if (!foundUser)
       return res.status(401).json({
-        message: `닉네임,${LoginUserNickname}는 존재하지 않습니다.`,
+        message: `닉네임,${LoginUserNickname} 님이 존재하지 않습니다.`,
       });
 
-    // evaluate password
     const match = await bcrypt.compare(
       LoginUserPassword,
       foundUser.userPassword
@@ -33,7 +31,7 @@ export const checkUserExist = async (req, res) => {
         message: '비밀번호를 확인해주세요',
       });
   } catch (error) {
-    console.log('checkUserExist 에러발생', error);
+    console.log('유저가 존재하는지 검색하는 중 에러가 발생했습니다.', error);
   }
 };
 
@@ -47,13 +45,11 @@ export const createUserInfo = async (req, res) => {
       userNickName: LoginUserNickname,
     }).exec();
 
-    //Unauthorized
     if (!foundUser)
       return res.status(401).json({
         message: `닉네임,${LoginUserNickname}유저가 존재하지 않습니다.`,
       });
 
-    // evaluate password
     const match = await bcrypt.compare(
       LoginUserPassword,
       foundUser.userPassword
@@ -61,9 +57,7 @@ export const createUserInfo = async (req, res) => {
     if (match) {
       const roles = Object.values(foundUser.roles).filter(Boolean);
       const userProfileImage = await getMyCloudinaryImageId('userImage');
-      // console.log('userProfileImage', userProfileImage);
 
-      // create JWTs
       const accessToken = jwt.sign(
         {
           UserInfo: {
@@ -79,13 +73,10 @@ export const createUserInfo = async (req, res) => {
         process.env.REFRESH_TOKEN_SECRET,
         { expiresIn: '1h' }
       );
-      // Saving refreshToken with current user
+
       foundUser.refreshToken = refreshToken;
       const result = await foundUser.save();
-      // console.log(result);
-      // console.log(roles);
 
-      // Creates Secure Cookie with refresh token
       res.cookie('jwt', refreshToken, {
         httpOnly: true,
         secure: true,
@@ -93,13 +84,11 @@ export const createUserInfo = async (req, res) => {
         maxAge: 24 * 60 * 60 * 1000,
       });
 
-      // Send authorization roles and access token to user
-      // res.json({ roles, accessToken });
       res.json({ LoginUserNickname, userProfileImage, roles, accessToken });
     } else {
       res.sendStatus(401);
     }
   } catch (error) {
-    console.log(error);
+    console.log('유저의 정보를 생성하는 중 에러가 발생했습니다.', error);
   }
 };

@@ -10,7 +10,7 @@ import {
 const UserRouter = express.Router();
 
 UserRouter.route('/')
-  .get(verifyRoles(ROLES_LIST.Admin), getAllUsers)
+  .get(verifyRoles(ROLES_LIST.User), getAllUsers)
   .delete(verifyRoles(ROLES_LIST.Admin), deleteUser);
 
 UserRouter.route('/:id').get(verifyRoles(ROLES_LIST.Admin), getUser);

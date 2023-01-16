@@ -1,13 +1,8 @@
 export const ErrorHandlerMiddleware = (err, req, res, next) => {
   let customError = {
-    // set default
     statusCode: err.statusCode || StatusCode.INTERNAL_SERVER_ERROR,
     msg: err.message || 'Something went wrong try again later',
   };
-
-  // if (err instanceof CustomAPIError) {
-  //   return res.status(err.statusCode).json({ msg: err.message })
-  // }
 
   if (err.name === 'ValidationError') {
     customError.msg = Object.values(err.errors)
