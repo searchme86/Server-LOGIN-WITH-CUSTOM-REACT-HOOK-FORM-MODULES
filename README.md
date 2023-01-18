@@ -1,38 +1,27 @@
-```
-📦src
- ┣ 📂config
- ┃ ┣ 📜allowedOrigin.js
- ┃ ┣ 📜corsOptions.js
- ┃ ┗ 📜roles_list.js
- ┣ 📂controller
- ┃ ┣ 📜Auth.controller.js
- ┃ ┣ 📜LogOut.controller.js
- ┃ ┣ 📜RefreshToken.controller.js
- ┃ ┣ 📜Register.controller.js
- ┃ ┗ 📜Users.controller.js
- ┣ 📂middleware
- ┃ ┣ 📜Credentials.middleware.js
- ┃ ┣ 📜VerifyJWT.middleware.js
- ┃ ┣ 📜VerifyRoles.middleware.js
- ┃ ┣ 📜errorHandler.js
- ┃ ┗ 📜notFound.js
- ┣ 📂model
- ┃ ┗ 📜User.model.js
- ┣ 📂route
- ┃ ┣ 📜Auth.route.js
- ┃ ┣ 📜Employee.route.js
- ┃ ┣ 📜LogOut.route.js
- ┃ ┣ 📜Refresh.route.js
- ┃ ┣ 📜Register.route.js
- ┃ ┣ 📜Root.route.js
- ┃ ┗ 📜Users.route.js
- ┣ 📂uploads
- ┣ 📂utils
- ┃ ┣ 📜CheckImageMiddleware.js
- ┃ ┣ 📜Cloudinary.helper.js
- ┃ ┗ 📜Multer.js
- ┣ 📜db.js
- ┣ 📜env.js
- ┣ 📜init.js
- ┗ 📜server.js
-```
+## ⌨️ 개요
+
+## 🚀 프로젝트 착수계기
+
+## 🔦 프로젝트 목적
+
+## 📦 폴더구조
+
+## 🔌 이전 프로젝트와 비교
+
+## 🔧 프로젝트 스펙
+
+## 📈 작업현황
+
+## 📆 작업 히스토리
+
+## 🔬 코드 흐름
+
+## 🔮 코드 설명
+
+## 😭 작업 중 어려웠던 점
+
+## ✍🏻 코드 작성하며 배운 점
+
+## 🐛 버그
+
+## 👀 수정사항 및 향후 계획
