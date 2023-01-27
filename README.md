@@ -3,9 +3,9 @@
 |      파일명       |           내용           | 경로  |
 | :---------------: | :----------------------: | :---: |
 |     README.md     |  프로젝트 소개 및 이해   | root  |
-|     Codes.md      |  프로젝트 코드 및 폴더   | /docs |
-| Issue-to-learn.md | 이슈 및 해결사항, 배운점 | /docs |
-|  Constraints.md   |     프로젝트의 한계      | /docs |
+|     codes.md      |  프로젝트 코드 및 폴더   | /docs |
+| issue-to-learn.md | 이슈 및 해결사항, 배운점 | /docs |
+|  constraints.md   |     프로젝트의 한계      | /docs |
 
 ## ⌨️ 프로젝트 개요
 
