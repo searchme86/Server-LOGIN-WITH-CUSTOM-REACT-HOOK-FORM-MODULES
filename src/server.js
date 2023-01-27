@@ -13,7 +13,6 @@ import RegisterRouter from './route/Register.route.js';
 import AuthRouter from './route/Auth.route.js';
 import RefreshRouter from './route/Refresh.route.js';
 import LogOutRouter from './route/LogOut.route.js';
-import EmployeeRouter from './route/Employee.route.js';
 import UserRouter from './route/Users.route.js';
 
 const app = express();
@@ -34,7 +33,6 @@ app.use('/refresh', RefreshRouter);
 app.use('/logout', LogOutRouter);
 
 app.use(verifyJWT);
-app.use('/employees', EmployeeRouter);
 app.use('/users', UserRouter);
 
 app.all('*', (req, res) => {

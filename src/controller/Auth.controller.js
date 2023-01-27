@@ -6,35 +6,6 @@ import { getMyCloudinaryImageId } from '../utils/Cloudinary.helper.js';
 
 dotenv.config();
 
-export const checkUserExist = async (req, res) => {
-  const {
-    body: { LoginUserNickname, LoginUserPassword },
-  } = req;
-
-  try {
-    const foundUser = await User.findOne({
-      userNickName: LoginUserNickname,
-    }).exec();
-
-    if (!foundUser)
-      return res.status(401).json({
-        message: `닉네임,${LoginUserNickname} 님이 존재하지 않습니다.`,
-      });
-
-    const match = await bcrypt.compare(
-      LoginUserPassword,
-      foundUser.userPassword
-    );
-
-    if (!match)
-      return res.status(401).json({
-        message: '비밀번호를 확인해주세요',
-      });
-  } catch (error) {
-    console.log('유저가 존재하는지 검색하는 중 에러가 발생했습니다.', error);
-  }
-};
-
 export const createUserInfo = async (req, res) => {
   try {
     const {
@@ -47,13 +18,19 @@ export const createUserInfo = async (req, res) => {
 
     if (!foundUser)
       return res.status(401).json({
-        message: `닉네임,${LoginUserNickname}유저가 존재하지 않습니다.`,
+        message: `닉네임, ${LoginUserNickname} 유저가 존재하지 않습니다.`,
       });
 
     const match = await bcrypt.compare(
       LoginUserPassword,
       foundUser.userPassword
     );
+
+    if (!match)
+      return res.status(401).json({
+        message: `비밀번호가 일치하지 않습니다.`,
+      });
+
     if (match) {
       const roles = Object.values(foundUser.roles).filter(Boolean);
       const userProfileImage = await getMyCloudinaryImageId('userImage');
