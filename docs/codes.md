@@ -1,5 +1,9 @@
 ### 🔬 코드 흐름
 
+- 코드 전체흐름
+- 유저 Auth
+- Refresh Token
+
 ### 📦 폴더구조 및 코드
 
 - 프로젝트 전체 코드
@@ -9,6 +13,16 @@
 ---
 
 ### 🔬 코드 흐름
+
+### 코드 전체흐름
+![백엔드_overview](https://user-images.githubusercontent.com/47154709/215052409-db4686d9-ff5b-46f3-ae64-4147350e79e5.png)
+
+### 유저 Auth
+![백엔드_auth](https://user-images.githubusercontent.com/47154709/215052459-12c7971b-c721-4c15-a9f1-e080b3d64ddf.png)
+
+### Refresh Token
+![백엔드_refresh](https://user-images.githubusercontent.com/47154709/215052503-c6e3d5b0-c039-4465-bad3-f97577bf0f3b.png)
+
 
 ### 📦 폴더구조 및 코드
 
